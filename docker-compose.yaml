@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+
+    pokemon-db:
+        container_name: "dama-db"
+        image: mysql:latest
+        volumes:
+            type: volume
+            source: dama-volume
+            target: /var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: "damaroot"
+            MYSQL_DATABASE: "dama"
+
+    service-1:
+        container_name: "service-1"
+        image: mariuscsaunders/service-1
+        build: ./service_1
+        environment: 
+            DATABASE_URI: "mysql+pymysql://root:damaroot@dama-db:3306/dama"
+        
+    service-2:
+        container_name: "service-2"
+        image: mariuscsaunders/service-2
+        build: ./service_2
+    
+    service-3:
+        container_name: "service-3"
+        image: mariuscsaunders/service-3
+        build: ./service_3
+
+    service-4:
+        container_name: "service-4"
+        image: mariuscsaunders/service-4
+        build: ./service_4
+
+        

@@ -1,0 +1,27 @@
+<!--Marius Saunders
+    QA Project 1
+    Frankendama Sharing
+-->
+
+<!--layout html file
+    Defines the NavBar
+    Has a title, paragraph and img that all .html pages mimic
+-->
+
+<body>
+
+    <h1>Kendama Ordering</h1></br>      
+
+    {% block title %}  
+    {% endblock title %}
+
+    <div class="navbar">
+        <a href="{{ url_for('home') }}"> Home </a>
+        <a href="{{ url_for('create') }}"> Create New </a>
+    </div>
+    <br>
+    
+    {% block body %}
+    {% endblock body %}
+
+</body>
