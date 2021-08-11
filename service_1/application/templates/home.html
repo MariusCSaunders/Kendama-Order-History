@@ -1,0 +1,41 @@
+<!--Marius Saunders
+    QA Project 2
+    Kendama Ordering
+-->
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    <h1>Home</h1>
+{% endblock title %}
+{% block body %}
+
+    <style>
+        td {
+            width: 150px;
+            text-align: center;
+            border: 1px solid rgb(255, 255, 255);
+            padding: 5px;
+         }
+   </style>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dama</th>
+                <th>Accessory</th>
+                <th>Price</th>
+            </tr>
+        </thead>    
+        <tbody>
+            {% for row in orders %} 
+              <tr>
+                  <td>{{row.dama}}</td>
+                  <td>{{row.accessory}}</td>
+                  <td>{{row.price}}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+       
+{% endblock body %}
