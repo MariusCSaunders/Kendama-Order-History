@@ -9,5 +9,5 @@ set -e
 docker-compose build --parrallel
 
 #Push images
-docker login -u ${DOCKERHUB} -p ${DOCKERHUB}
+docker login -u ${DOCKERHUB_USR} -p ${DOCKERHUB_PSW}
 docker-compose push
