@@ -1,11 +1,6 @@
 pipeline{
     agent any
 
-    environment{
-        DATABASE_URI=
-        DOCKERHUB_CREDENTIALS=
-    }
-
     stages{
         stage('Install Dependencies'){
             steps{
