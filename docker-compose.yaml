@@ -21,15 +21,15 @@ services:
         source: dama-volume
         target: /var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "pass"
-      MYSQL_DATABASE: "data"
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
 
   service-1:
     container_name: "service-1"
     image: mariuscsaunders/service-1
     build: ./service_1
     environment: 
-      DATABASE_URI: "mysql+pymysql://root:pass@dama-db:3306/data"
+      DATABASE_URI: 
     restart: on-failure
     
   service-2:
