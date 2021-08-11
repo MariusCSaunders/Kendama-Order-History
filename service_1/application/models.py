@@ -6,8 +6,8 @@ from . import db
 
 class Orders(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    dama = db.Column(db.String(15), nullable=False)
-    accessory = db.Column(db.String(15), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    dama = db.Column(db.String(30), nullable=False)
+    accessory = db.Column(db.String(30), nullable=False)
+    price = db.Column(db.Float)
 
     

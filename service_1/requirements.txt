@@ -8,3 +8,5 @@ selenium
 pytest
 pytest-cov
 requests
+pymysql
+requests_mock

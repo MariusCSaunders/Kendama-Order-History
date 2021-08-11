@@ -1,0 +1,10 @@
+all:
+  hosts:
+    docker-manager:
+    load-balancer:
+  children:
+    workers:
+      hosts:
+        docker-worker:
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
