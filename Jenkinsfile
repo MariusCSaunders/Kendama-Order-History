@@ -1,6 +1,11 @@
 pipeline{
     agent any
 
+    environment{
+        DATABASE_URI = credentials('DATABASE_URI')
+        DOCKERHUB = credentials("DOCKERHUB")
+    }
+
     stages{
         stage('Install Dependencies'){
             steps{
