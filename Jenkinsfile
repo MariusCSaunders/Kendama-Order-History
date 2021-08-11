@@ -2,8 +2,10 @@ pipeline{
     agent any
 
     environment{
+        DOCKERHUB = credentials('DOCKERHUB')
         DATABASE_URI = credentials('DATABASE_URI')
-        DOCKERHUB = credentials("DOCKERHUB")
+        MYSQL_ROOT_PASSWORD = credentials('	MYSQL_ROOT_PASSWORD')
+        MYSQL_DATABASE = credentials('MYSQL_DATABASE')
     }
 
     stages{
