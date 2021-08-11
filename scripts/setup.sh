@@ -3,7 +3,7 @@
 set -e 
 
 sudo apt-get update
-sudo apt-get install -y curl jq python3-dev software-properties-common
+sudo apt-get install -y curl jq python3-dev libpq-dev software-properties-common
 
 sudo apt-add-repository -y --update ppa:ansible/ansible
 sudo apt-get install -y ansible
@@ -11,7 +11,6 @@ sudo apt-get install -y ansible
 if [ -z "$(docker --version 2> /dev/null)" ]; then
     curl https://get.docker.com | sudo bash
     sudo usermod -aG docker $USER 
-    newgrp docker
 fi
 
 if [ -z "$(docker-compose --version 2> /dev/null)" ]; then
