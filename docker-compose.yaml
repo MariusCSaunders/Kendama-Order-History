@@ -18,7 +18,7 @@ services:
     image: mariuscsaunders/service-1
     build: ./service_1
     environment: 
-      DATABASE_URI: "mysql+pymysql://root:pass@dama-db:3306/data"
+      DATABASE_URI: "mysql+pymysql://root:pass@dama-db:3306/dama"
     restart: on-failure
     
   service-2:
