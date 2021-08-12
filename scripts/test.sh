@@ -13,4 +13,4 @@ pip3 install -r service_${i}/requirements.txt > /dev/null;
 done 
 
 #Unit testing
-python3 -m pytest --disable-warnings --cov --cov-config=.coveragerc 
+python3 -m pytest --disable-warnings --cov --cov-config=.coveragerc --cov-report=term-missing
