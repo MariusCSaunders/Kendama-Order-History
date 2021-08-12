@@ -4,4 +4,5 @@ include=service_[234]/app.py,service_1/application/*.py
 omit = venv/
 
 [report]
-exclude_lines = if __name__ == '__main__':
+exclude_lines = if __name__=='__main__':
+exclude_lines = app.run(host='0.0.0.0', debug=True)
