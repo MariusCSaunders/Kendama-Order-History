@@ -10,3 +10,4 @@ pytest-cov
 requests
 pymysql
 requests_mock
+cryptography

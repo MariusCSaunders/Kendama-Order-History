@@ -1,13 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-from os import getenv
+from os import getenv, urandom
 
 #Configuration of the database application
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
-app.config['SECRET_KEY']= str(os.urandom(16))
+
+app.config.update(
+            SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI'),
+            SQLALCHEMY_TRACK_MODIFICATIONS=True,
+            SECRET_KEY = str(os.urandom(16))
+        )
 
 db = SQLAlchemy(app)
 
