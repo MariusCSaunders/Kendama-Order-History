@@ -29,7 +29,7 @@ pipeline{
 
         stage('Configure Hosts For Deployment'){
             steps{
-                sh "bash scripts/build.sh"
+                sh "bash scripts/config.sh"
             }
         }
 
