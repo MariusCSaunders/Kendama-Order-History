@@ -7,7 +7,7 @@ import random
 
 app = Flask(__name__)
 
-accessories = ["Dama Holster", "T-Shirt", "String Pack", "Pin Badge", "5 Panel Hat", "Ken Care Kit"]
+accessories = ["Go Pro", "Tripod", "RED DSMC2 HELIUM", "Power Bank", "Editing PC", "64GB SD Card"]
 
 @app.route('/get/accessories')
 def get_accessories():
