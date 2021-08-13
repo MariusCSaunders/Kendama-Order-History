@@ -3,6 +3,7 @@ from flask_testing import TestCase
 from requests_mock import mock
 
 from service_1.application import app, db
+from service_2 import damas
 
 class TestBase(TestCase):
 
