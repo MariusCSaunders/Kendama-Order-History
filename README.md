@@ -187,6 +187,7 @@ The fix for this was to create a `.coveragerc` file that tells pytest exactly wh
 * Apply a healthy ammount of CSS styling to make the front-end more pleasing to look at.
 * During the implementation of a rolling update i came across this error in Jenkins:
 ![Jenkins Error](./Images/JenkinsError.png)
+<br>
 I found that logging into the Jenkins VM and running the command `sudo docker system prune --all --force` fixed this issue.
 
 ### Author
