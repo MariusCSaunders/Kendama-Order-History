@@ -1,3 +1,7 @@
 [run]
 include=service_[234]/app.py,service_1/application/*.py
 
+omit = venv/
+
+[report]
+exclude_lines = if __name__=='__main__':
