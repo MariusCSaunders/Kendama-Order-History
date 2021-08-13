@@ -21,7 +21,7 @@ prices = {
         'Adobe Premiere Pro': 139.99,
         'Editing Computer': 1499.99,
         'RED DSMC2': 14499.99,
-        'Power Bank': 37.99
+        '24000 Power Bank': 37.99
     }
 }
 
