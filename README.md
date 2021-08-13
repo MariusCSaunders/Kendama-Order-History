@@ -6,7 +6,7 @@
   * [Proposal](#proposal)
 * [Architecture](#architecture)
   * [Risk Assessment](#risk-assessment)
-  * [Trello Boardd](#trello-board)
+  * [Kanban Board](#kanban-board)
   * [Test Analysis](#analysis-of-testing)
 * [Infrastructure](#infrastructure)
   * [Jenkins](#jenkins)
@@ -61,11 +61,12 @@ My detailed risk assessment can be seen below, outlining the minor and major ris
 ![risk assessment image](./Images/risk_assessment.png)
 View the original document [here](https://docs.google.com/spreadsheets/d/166MTAAl1HzXAQWaA2iS9Mz9MXRZpsr7y-s-MHqZk_yk/edit?usp=sharing)
 
-### Trello Board
+### Kanban Board
 
 For project tracking i decided to use [Trello](https://trello.com) over other similar services as Trello is super lightweight and has a visusal representation that is easy to understand and follow.
 
-
+![trello board image](./Images/TrelloBoard.png)
+View the updated board [here](https://trello.com/b/xKZvWDN1/qa-project-2-user-story)
 
 ### Analysis of Testing
 
