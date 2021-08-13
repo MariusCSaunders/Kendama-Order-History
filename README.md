@@ -184,6 +184,7 @@ The fix for this was to create a `.coveragerc` file that tells pytest exactly wh
 * To decrease total time of build, push and deploy, I would user Nexus as a Private Image Repository.
 * Implement Integration testing using Selenium.
 * Implement a dictionary of photo links to add a more visual representation of each order.
+* Apply a healthy ammount of CSS styling to make the front-end more pleasing to look at.
 
 ### Author
 	
