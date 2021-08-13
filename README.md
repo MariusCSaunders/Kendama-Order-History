@@ -11,7 +11,7 @@
 * [Infrastructure](#infrastructure)
   * [Jenkins](#jenkins)
   * [Entity Diagram](#entity-diagram)
-  * [Docker Swarm](#interactions-diagram)
+  * [Interactions Diagram](#interactions-diagram)
   * [The 4 Services](#the-4-services)
 * [Development](#development)
   * [Front-End Design](#front-end)
@@ -70,15 +70,64 @@ View the updated board [here](https://trello.com/b/xKZvWDN1/qa-project-2-user-st
 
 ### Analysis of Testing
 
+Testing is essential to any project of any scale. With such a small scale project such as this that adopts a CI?CD approach, it is important to plan testing areas and implement a system to run automated tests. Below is the scope of testing for this project:
+
+![testing analysis](./Images/TestingAnalysis.png)
+This report is based on the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) scale. With this report it is obvious that Unit Testing is the only form of testing that is essential and integration testing is marked as 'Should do' and will be implemented if the time scale allows it.
+
 ## Infrastructure
+
+In this project I have implemented a Continous Deployment structure so that new versions of the application can be deployed quickly, smoothly and with limited down-time.
 
 ### Jenkins 
 
+I have implemented a web-hook for branch `main`, which means whenever new content is pushed to `main` GitHub will tell Jenkins to run the following pipeline: 
+
+#### **1.** Test: pytest  
+> Unit tests are run as outlined [earlier](#analysis-of-testing). A coverage report is produced and can be viewed in the console logs. 
+
+#### **2.** & **3.** Build & Push: docker-compose  
+> Jenkins' credentials system is used to handle logging into DockerHub, and the new images are then pushed to the repository specified.
+
+#### **4.** Configure: ansible 
+> Ansible configures several things:
+> * Installing dependencies (such as docker and docker-compose),
+> * Setting up the swarm, and joining the swarm on all worker nodes,
+> * Reloading NGINX with any changes to the nginx.conf file.
+
+#### **5.** Deploy: docker swarm/stack 
+> Jenkins copies the `docker-compose.yaml` file over to the manager node, SSH's onto it, and then runs `docker stack deploy`.
+
+*The commands used in Jenkins' pipeline can be seen in the [Jenkinsfile](./Jenkinsfile)*
+
+#### Pipeline Diagram
+Below is a diagram of the CI pipeline implemented:
+![ci pipeline](./Images/ci_pipelineNEW.png)
+
+At the start of the project i created a CI pipeline diagram that was outdated when new tools were required in the implementation of the pipeline:
+![ci pipeline old](./Images/ci_pipelineOLD.png)
+
 ### Entity Diagram
 
-### Docker Swarm
+This project only uses one table in the database however it is still important to detail the structure of the table. Below is a diagram for the table used in this project.
+![ERD diagram](./Images/ERD.png)
+
+At the start of the project, my initial idea for the application was to create a service that randomly produced an unique USERNAME. Below is an ERD diagram for that idea.
+![Old ERD diagram](./Images/ERD_OLD.png)
+
+### Interactions Diagram
+Below is a diagram which maps out where information is taken from when the user connects to the NGINX machine on port 80.
+
+![Interaction Diagram](./Images/Interaction.png)
+
+Using Docker Swarm as an orchestration tool, I created a virtual machine network which can all be accessed by a user. As the diagram shows, this network has a NGINX load-balancer which diverts the user to a VM that has the least connections, this extra layer increases security as it makes the user one step further from the main application.
 
 ### The 4 Services
+As also described previously, the below diagram represents how the services interact with one another.
+
+![4 services](./Images/4services.png)
+
+How this system works is the front-end sends GET requests to API-1 and API-2. It then sends their responses to API-3 as a POST request, and API-3 sends its data back in response. Lastly the front-end can send requests to the MySQL instance to INSERT the new entry, and SELECT the old entries in order to display a history to the user as required.
 
 ## Development
 
