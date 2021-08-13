@@ -7,7 +7,7 @@ import random
 
 app = Flask(__name__)
 
-damas = ["Krom Gas", "SK Lomond", "Sol Liam R Mod", "Sweets Decade", "GT Nic Stodd", "Cereal WC Performer"]
+damas = ["Krom Beams", "SK Mor", "Sol Alex M", "Sweets Splice", "GT TF", "Cereal 1.5 SK"]
 
 @app.route('/get/dama')
 def get_dama():
