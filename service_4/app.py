@@ -23,6 +23,7 @@ prices = {
         '5 Panel Hat': 24.99,
         'Ken Care Kit': 18.99
     }
+}
 
 @app.route('/post/order', methods=['POST'])
 def post_order():
