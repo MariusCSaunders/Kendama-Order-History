@@ -133,11 +133,22 @@ How this system works is the front-end sends GET requests to API-1 and API-2. It
 
 ### Front End
 
+When a user navigates to port 80 on the NGINX's IP, the relavant information will be displayed in the format shown below:
+
+![Front End](./Images/FrontEnd.png)
+
+
 ### Unit Testing
+
+
 
 ## Footer
 
 ### Future Improvements
+
+* To decrease total time of build, push and deploy, I would user Nexus as a Private Image Repository.
+* Implement Integration testing using Selenium.
+* Implement a dictionary of photo links to add a more visual representation of each order.
 
 ### Author
 	
