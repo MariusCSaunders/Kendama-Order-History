@@ -10,11 +10,11 @@ from .models import Orders
 
 @app.route('/')
 def home():
-    dama = requests.get('http://service-2:5000/get/dama').text
-    accessory = requests.get('http://service-3:5000/get/accessories').text
+    dama = requests.get('http://service-2:5000/get_dama').text
+    accessory = requests.get('http://service-3:5000/get_accessories').text
 
     price_request = {'damas': dama, 'accessories': accessory}
-    price = requests.post('http://service-4:5000/post/order', json=price_request).json()
+    price = requests.post('http://service-4:5000/post_order', json=price_request).json()
 
     order = Orders(dama=dama, accessory=accessory, price=price)
     db.session.add(order)
