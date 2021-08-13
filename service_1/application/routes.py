@@ -22,7 +22,7 @@ def home():
 
     order_history = Orders.query.order_by(Orders.id.desc()).limit(5).all()
         
-    return render_template("home.html", orders=order_history)
+    return render_template("home.html", orders=order_history, current_order=order)
 
 
 
