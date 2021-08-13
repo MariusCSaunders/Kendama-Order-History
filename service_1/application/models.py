@@ -9,5 +9,6 @@ class Orders(db.Model):
     dama = db.Column(db.String(30), nullable=False)
     accessory = db.Column(db.String(30), nullable=False)
     price = db.Column(db.Float)
+    #link = db.Column(db.String(300), nullable=False)
 
     
