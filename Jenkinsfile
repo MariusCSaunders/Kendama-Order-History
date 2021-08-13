@@ -5,7 +5,6 @@ pipeline{
         DOCKERHUB = credentials('DOCKERHUB')
         DATABASE_URI = credentials('DATABASE_URI')
         MYSQL_ROOT_PASSWORD = credentials('	MYSQL_ROOT_PASSWORD')
-        MYSQL_DATABASE = credentials('MYSQL_DATABASE')
     }
 
     stages{
