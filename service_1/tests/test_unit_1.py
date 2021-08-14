@@ -39,11 +39,11 @@ class TestResponse(TestBase):
         with mock() as m:
             m.get('http://service-2:5000/get/dama', text="Krom Gas")
             m.get('http://service-3:5000/get/accessories', text="Pin Badge")
-            m.post('http://service-4:5000/post/order', json=5)
+            m.post('http://service-4:5000/post/order', json=40.00)
 
             response = self.client.get(url_for('home'))
         
         self.assert200(response)
         self.assertIn("Krom Gas", response.data.decode())
         self.assertIn("Pin Badge", response.data.decode())
-        self.assertIn("5", response.data.decode())
+        self.assertIn("40.0", response.data.decode())

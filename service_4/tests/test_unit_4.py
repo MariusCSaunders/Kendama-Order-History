@@ -17,4 +17,4 @@ class TestResponse(TestBase):
                 response = self.client.post(url_for('post_order'), json=result)
                 self.assert200(response)
                 total_price = prices['damas'][dama] + prices['accessories'][accessory] + 3.50
-                #self.assertEqual(response.json, round(total_price, 2))
+                self.assertEqual(response.json, round(total_price, 2))
