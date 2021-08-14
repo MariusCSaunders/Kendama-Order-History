@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-from os import getenv, urandom
+
 
 #Configuration of the database application
 app=Flask(__name__)

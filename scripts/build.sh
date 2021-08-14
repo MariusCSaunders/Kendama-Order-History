@@ -1,8 +1,5 @@
 #!/bin/bash
 
-docker-compose build --parallel && \
-#!/bin/bash
-
 set -e
 
 #Build images
