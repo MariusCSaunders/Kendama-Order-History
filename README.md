@@ -58,7 +58,7 @@ At the start of the project, I realised that to meet all the requirements and to
 
 My detailed risk assessment can be seen below, outlining the minor and major risks that have potential to impact the success of this project. Creating a risk assessment is important in any project as it helps make the project more robust and provides methods of mitigating the impact of any such risk that does occur.
 
-![risk assessment image](./Images/risk_assessment.png)
+![risk assessment image](./Images/RiskAssement.png)
 View the original document [here](https://docs.google.com/spreadsheets/d/166MTAAl1HzXAQWaA2iS9Mz9MXRZpsr7y-s-MHqZk_yk/edit?usp=sharing)
 
 ### Kanban Board
