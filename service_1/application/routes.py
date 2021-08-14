@@ -4,7 +4,7 @@
 
 from flask import render_template
 import requests
-f
+
 
 from . import app, db
 from .models import Orders
