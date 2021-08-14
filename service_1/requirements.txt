@@ -11,3 +11,4 @@ requests
 pymysql
 requests_mock
 cryptography
+mysqlclient
