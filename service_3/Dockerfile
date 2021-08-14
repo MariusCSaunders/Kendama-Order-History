@@ -1,6 +1,6 @@
 FROM python:3.9.6
 
-WORKDIR /service_1
+WORKDIR /service_3
 
 COPY . .
 
