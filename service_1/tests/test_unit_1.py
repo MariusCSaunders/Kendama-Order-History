@@ -46,4 +46,4 @@ class TestResponse(TestBase):
         self.assert200(response)
         self.assertIn("Krom Gas", response.data.decode())
         self.assertIn("Pin Badge", response.data.decode())
-        self.assertIn("40.0", response.data.decode())
+        self.assertIn("5", response.data.decode())
