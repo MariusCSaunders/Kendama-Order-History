@@ -4,6 +4,7 @@
 
 from flask import render_template
 import requests
+f
 
 from . import app, db
 from .models import Orders
@@ -14,25 +15,6 @@ def home():
     accessory = requests.get('http://service-3:5000/get/accessories').text
 
     price_request = {'damas': dama, 'accessories': accessory}
-
-
-
-    incorrect_json = '{ name":"John "age":30 "car:"None" }'
-    try:
-	    a_json = json.loads(incorrect_json)
-	    print(a_json)
-    except json.decoder.JSONDecodeError:
-	    print("String could not be converted to JSON")
-
-    try:
-	    a_json = json.loads(correct_json)
-	    print(a_json)
-    except json.decoder.JSONDecodeError:
-	    print("String could not be converted to JSON")
-
-
-
-
     price = requests.post('http://service-4:5000/post/order', json=price_request).json()
 
     order = Orders(dama=dama, accessory=accessory, price=price)
