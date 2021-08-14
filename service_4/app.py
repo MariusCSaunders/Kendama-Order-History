@@ -34,7 +34,7 @@ def post_order():
     price = price + 3.50
     price = round(price, 2)
 
-    return jsonify(5)
+    return jsonify(price)
 
 if __name__=='__main__':
     app.run(debug=True, host='0.0.0.0')
