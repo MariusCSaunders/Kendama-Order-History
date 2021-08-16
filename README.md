@@ -63,14 +63,14 @@ View the original document [here](https://docs.google.com/spreadsheets/d/166MTAA
 
 ### Kanban Board
 
-For project tracking i decided to use [Trello](https://trello.com) over other similar services as Trello is super lightweight and has a visusal representation that is easy to understand and follow.
+For project tracking i decided to use [Trello](https://trello.com) over other similar services as Trello is super lightweight and has a visual representation that is easy to understand and follow.
 
 ![trello board image](./Images/TrelloBoard.png)
 View the updated board [here](https://trello.com/b/xKZvWDN1/qa-project-2-user-story)
 
 ### Analysis of Testing
 
-Testing is essential to any project of any scale. With such a small scale project such as this that adopts a CI?CD approach, it is important to plan testing areas and implement a system to run automated tests. Below is the scope of testing for this project:
+Testing is essential to any project of any scale. With such a small scale project such as this that adopts a CI/CD approach, it is important to plan testing areas and implement a system to run automated tests. Below is the scope of testing for this project:
 
 ![testing analysis](./Images/TestingAnalysis.png)
 This report is based on the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) scale. With this report it is obvious that Unit Testing is the only form of testing that is essential and integration testing is marked as 'Should do' and will be implemented if the time scale allows it.
@@ -83,10 +83,13 @@ In this project I have implemented a Continous Deployment structure so that new 
 
 I have implemented a web-hook for branch `main`, which means whenever new content is pushed to `main` GitHub will tell Jenkins to run the following pipeline: 
 
-#### **1.** Test: pytest  
+#### **1.88 Install dependancies
+> The pipeline iterates through each of the four serivces running `pip3 install -r requirements.txt`
+
+#### **2.** Test: pytest  
 > Unit tests are run as outlined [earlier](#analysis-of-testing). A coverage report is produced and can be viewed in the console logs. 
 
-#### **2.** & **3.** Build & Push: docker-compose  
+#### **3.** Build & Push: docker-compose  
 > Jenkins' credentials system is used to handle logging into DockerHub, and the new images are then pushed to the repository specified.
 
 #### **4.** Configure: ansible 
