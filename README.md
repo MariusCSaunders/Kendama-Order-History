@@ -83,7 +83,7 @@ In this project I have implemented a Continous Deployment structure so that new 
 
 I have implemented a web-hook for branch `main`, which means whenever new content is pushed to `main` GitHub will tell Jenkins to run the following pipeline: 
 
-#### **1.88 Install dependancies
+#### **1.** Install dependancies
 > The pipeline iterates through each of the four serivces running `pip3 install -r requirements.txt`
 
 #### **2.** Test: pytest  
