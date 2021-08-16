@@ -10,6 +10,8 @@
 {% endblock title %}
 {% block body %}
 
+    <a href="{{ url_for('homne') }}"> Create New Order</a>
+
     <p>You ordered a <u>{{current_order.dama}}</u> and a <u>{{ current_order.accessory }}</u> at the total price of <u>£{{ current_order.price }}</u></p>
 
     <style>
